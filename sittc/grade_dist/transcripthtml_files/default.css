@@ -1,0 +1,79 @@
+.borderBottom {
+	border-bottom: solid 1px black;
+	padding-bottom: 2px;
+}
+
+.center, .center td {
+	text-align: center;
+}
+
+.colorGreen {
+	color: green;
+}
+.colorRed {
+	color: #E00000;
+}
+
+.fontSmall {
+	font-size: 85%;
+}
+
+a:visited.neverVisited {
+	color: #333399;  /* match a:visited in wa.edu/home/home.css */
+}
+
+br.half {
+	font-size: 50%;
+}
+
+input.button {
+	cursor: pointer;
+}
+
+table.sps_table {
+	border: 2px solid #606060;
+	border-collapse: collapse;
+}
+table.sps_table th {
+	border: 2px solid #606060;
+}
+
+.sps_fixed {
+	font-family: courier new,courier,fixed,monospace;
+}
+
+table.infoBox {
+	border: 3px solid #ddddff;
+	border-collapse: collapse;
+	width: 350px;
+}
+table.infoBox td,
+table.infoBox th {
+	font-size: 85%;
+	padding: 3px;
+}
+table.infoBox th {
+	background-color: #ddddff;
+	white-space: nowrap;
+	text-align: center;
+}
+
+td.CellError {
+	border: 2px solid #ff0000;
+}
+
+/* hide X button on jQuery alert modal dialog */
+div[aria-labelledby='ui-dialog-title-divAlertDialog'] .ui-dialog-titlebar-close {
+    display: none;
+}
+
+/* hide X button on timeout modal dialog -- moved from spsStaffView.css */
+div[aria-labelledby='ui-dialog-title-divTimeoutDialog'] .ui-dialog-titlebar-close {
+    display: none;
+}
+
+/* PROCESSING MODAL DIALOG STYLES */
+div[aria-labelledby='ui-dialog-title-divProcessingDialog'] div.ui-dialog-titlebar
+{
+	display: none;
+}

@@ -1,0 +1,209 @@
+{% load staticfiles %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Pythia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'grade_dist/css/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'grade_dist/css/custom.min.css' %}">
+    <link rel="stylesheet" href="{% static 'grade_dist/css/jquery.qtip.min.css' %}">
+    <link rel="stylesheet" href="{% static 'grade_dist/css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="{% static 'grade_dist/css/jqx.base.css' %}" type="text/css " />
+    <!-- We use the JQWidgets library for the slider and search field components. http://www.jqwidgets.com/ -->
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxcore.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxbuttons.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxslider.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxinput.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxscrollbar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxlistbox.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxdropdownlist.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxswitchbutton.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/jquery.qtip.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/js.cookie.js' %}"></script>
+    <script src="{% static 'grade_dist/js/search_bar.js' %}"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.js"></script>
+    <script src="{% static 'grade_dist/js/main.js' %}"></script>
+    <script type="text/javascript">
+        var class_list = {{ class_list | safe }};
+        var course = "{{course | safe}}";
+        var view_class_generic_url = "{% url 'class' 'AAA999' %}";
+    </script>
+</head>
+<body class="classes-body">
+    {% csrf_token %}
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container ">
+            <div class="navbar-header ">
+                <a href="/" class="navbar-brand ">Pythia</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="# ">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" autocomplete="off" class="form-control search-box" id="classSearchBar" placeholder="Search for a class..">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="page-header ">
+            <div class="row ">
+                <div class="col-lg-10 ">
+                    <div class="row course-header">
+                        <div class="col-md-3">
+                            <h3 id="course">{{ course }}</h3>
+                        </div>
+                        <div class="col-lg-12">
+                            <form class="form-horizontal filter-form">
+                                <fieldset>
+                                    <div class="row">
+                                        <!--<label for="instructor-dropdown" class="col-lg-2 control-label ">Instructor</label>-->
+                                        <div class="col-md-4">
+                                            <div id="instructor-dropdown-box">
+                                                <div id="instructor-dropdown" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div id="course-dropdown" class="form-control" style="display: none">
+                                            </div>
+                                            <a href="#" id="btn-customize" data-target="#uploadModal" data-toggle="modal" class="btn btn-default btn-lg btn-block btn-customize">Customize filters</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div id="btn-non-numerical-box">
+                                                <a href="#" id="btn-non-numerical" class="btn btn-default btn-lg btn-block btn-non-numerical">Non-Numerical</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="well ">
+                        <!-- grade distrbituion chart here -->
+                        <div class="row">
+                            <div class="grade-dist">
+                            </div>
+                        </div>
+                        <div class="slider-row row">
+                            <div id='date-slider'></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 options-form ">
+                    <span><span id="size-label" class="avg-size-value">12</span> average size</span>
+                    <br />
+                    <span><span id="hours-taken-label" class="hours-value">9</span> hours per week</span>
+                    <h5 id="course">Classes other people took with this one</h5>
+                    <div class="well conc-course-well">
+                        <div id="concClass1">
+                        </div>
+                    </div>
+                    <div class="well conc-course-well">
+                        <div id="concClass2">
+                        </div>
+                    </div>
+                    <div class="well conc-course-well">
+                        <div id="concClass3">
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                                <a href="#" id="btn-non-numerical" class="btn btn-default btn-lg btn-block btn-non-numerical">Non-Standard</a>
+                            </div>
+                            <div class="form-group ">
+                                <span id="size-label" class="label label-info ">Average Size: 32</span>
+                            </div>
+                            <div class="form-group ">
+                                <span id="hours-taken-label" class=" label label-info ">Most Recent Hours/Week: 9</span>
+                            </div>-->
+
+                </div>
+            </div>
+            <!--<div class="row ">
+             <div class="col-lg-12 ">
+                    <div class="row ">
+                        <div class="col-md-10 ">
+                            <h5 id="course ">Classes people took before this</h2>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-4 ">
+                            <div class="well ">
+                                <div class="row ">                                
+                                    CSE 121
+                                    <span class="label label-info ">Average Size: 23</span>
+                                    <span class="label label-info ">Most recent hours/week: 2.5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ">                                 
+                            <div class="well ">
+                                CSE 321
+                                <span class="label label-info ">Average Size: 21</span>
+                                <span class="label label-info ">Most recent hours/week: 5</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ">                                 
+                            <div class="well ">
+                                <div class="row ">                                
+                                    CSE 121
+                                    <span class="label label-info ">Average Size: 23</span>
+                                    <span class="label label-info ">Most recent hours/week: 2.5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="row ">
+                <div class="col-lg-12 ">
+                    <form class="form-horizontal ">
+                        <fieldset>
+                            <legend>Comments</legend>
+                            <div class="form-group ">
+                                <div class="col-lg-10 ">
+                                    <textarea id="commentsArea" class="form-control " rows="3 " id="textarea "></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <div class="col-lg-10 ">
+                                    <button type="button" id="commentsSubmit" class="btn btn-default ">Submit</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="col-lg-10 info-panel " id="commentsList">
+                        <div class="panel panel-default" id="commentsPanel">
+                            <div class="panel-heading ">
+                                <h3 class="panel-title ">Anonymous</h3>
+                            </div>
+                            <div class="panel-body ">
+                                This class was the easiest class I have ever taken. I attended only the first lecture and still received an A+!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "grade_dist/upload.html" %}
+</body>

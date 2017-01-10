@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Pythia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="{% static 'grade_dist/css/bootstrap.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'grade_dist/css/custom.min.css' %}">
+    <link rel="stylesheet" href="{% static 'grade_dist/css/style.css' %}">
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="{% static 'grade_dist/js/search_bar.js' %}"></script>
+    <!-- We use the JQWidgets library for the slider and search field components. http://www.jqwidgets.com/ -->
+    <link rel="stylesheet" href="{% static 'grade_dist/css/jqx.base.css' %}" type="text/css " />
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxcore.js' %}"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/jqxinput.js' %}"></script>
+    <script type="text/javascript">
+        var class_list = {{ class_list | safe }};
+        var view_class_generic_url = "{% url 'class' 'AAA999' %}";
+    </script>
+</head>
+
+<body class="search-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h1>Pythia</h1>
+                    <p>Filterable visualizations of course grade distribution data.</p>
+                    <form role="search">
+                        <div class="form-group">
+                            <input type="text" autocomplete="off" class="form-control search-box" id="classSearchBar" placeholder="Search for a class.." id="classSearchBar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

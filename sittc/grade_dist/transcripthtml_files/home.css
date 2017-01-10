@@ -1,0 +1,198 @@
+body {color: black; background: #ffffff}
+h1 {font-family: Arial, Helvetica, sans-serif}
+h2 {font-family: Arial, Helvetica, sans-serif}
+h3 {font-family: Arial, Helvetica, sans-serif}
+h4 {font-family: Arial, Helvetica, sans-serif}
+h5 {font-family: Arial, Helvetica, sans-serif}
+h6 {font-family: Arial, Helvetica, sans-serif}
+address {font-family: Arial, Helvetica, sans-serif; font-size: 80%; padding-left: 0.5em; font-style: normal }
+a:link   {color: #333399; background: transparent }
+a:visited {color: #336666; background: transparent }
+.logotype, .logotype a:link, .logotype a:visited {  font-family: "Times New Roman", Times, serif; font-size: 1em; font-style: normal; font-weight: bold; line-height: 120%; color: #666666; background: transparent; text-decoration: none}
+.lale, .lale a:link, .lale a:visited  { color: #6633cc; background: transparent; font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: none }
+.breadcrumbs, .breadcrumbs a:link, .breadcrumbs a:visited   { font-size: 80%; font-family: Arial, Helvetica, sans-serif; text-decoration: none }
+.barnav{ font-size: 80%; font-family: Arial, Helvetica, sans-serif; text-decoration: none }
+.barnav a:link, .barnav a:visited { font-family: Arial, Helvetica, sans-serif; text-decoration: none }
+.bartitlenav { font-size: 80%; font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: #000000; background: transparent }
+.bartitlenav a:link, .bartitlenav a:visited { font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: #000000; background: transparent }
+.hpbkg {  background-image:  url(/home/graphics/sealbkg01.gif); background-repeat: no-repeat}
+.sectiontitle { font-size: 80%; font-family: Arial, Helvetica, sans-serif; text-decoration: none; font-style: normal; font-weight: bold; color: #ffffff }
+.sectiontitle a:link, .sectiontitle a:visited  { font-family: Arial, Helvetica, sans-serif; text-decoration: none; font-style: normal; font-weight: bold; color: #ffffff }
+.lpad { padding-left: 0.5em }
+.rpad { padding-right: 0.5em }
+.weathertitle {  font-family: Arial, Helvetica, sans-serif; font-size: 80%; font-weight: normal; color: #ffffff}
+.weather {  font-family: Arial, Helvetica, sans-serif; font-size: 80%; font-weight: normal}
+.alerthead {  font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-style: italic; text-transform: capitalize}
+.newstext {  font-family: Arial, Helvetica, sans-serif; font-size: 85%}
+.newshead, .newshead a:link, .newshead a:visited {  font-weight: bold; text-decoration: none}
+
+.barlink { font-family: arial, helvetica, sans-serif;
+	font-size: 80%;
+	font-weight: bold; color: #ffffff; text-decoration: none}
+
+.navlink { font-family: arial, helvetica, sans-serif;
+	font-size: 80%;
+	font-weight: bold; text-decoration: none }
+
+.navlinkbig { font-family: arial, helvetica, sans-serif;
+	font-size: 80%;
+	font-weight: bold; text-decoration: none }
+
+.block {display:block;}
+.l1text       { font-size: 90%; font-family: Arial, Helvetica, Geneva, sans-serif }
+.l1text a:link  { text-decoration: none }
+.l1text a:visited    { text-decoration: none }
+.l2text         { font-size: 90%; font-family: Arial, Helvetica, Geneva, sans-serif; text-decoration: none }
+.l2text a:link  { text-decoration: none }
+.l2text a:visited  { text-decoration: none }
+.linetopnleftw    { border-top: 1pt solid #666; border-left: 5pt solid #666 }
+.linebotn  { border-bottom: 1pt solid #666 }
+.linetopn { border-top: 1pt solid #666 }
+.llinetopnleftw    { border-top: 1pt solid #ccc; border-left: 5pt solid #ccc }
+.llinebotn  { border-bottom: 1pt solid #ccc }
+.padb { padding-bottom: 3pt; padding-right: 10pt }
+.padltr { padding-top: 1ex; padding-right: 1ex; padding-left: 1ex }
+.boldtext    { font-weight: bold }
+.banner {  background-image:  url(/home/graphics/rib0.gif) }
+div#toplogo {
+	position: relative;
+	margin-bottom: -1em;
+	z-index: 10;
+}
+div#toplogo img { border: 0 }
+div>div#toplogo { voice-family: "\"}\""; voice-family: inherit; margin: 0; }
+div[class] div#toplogo { margin-bottom: -1em }
+img#toplogo {
+	border: 0;
+	margin-bottom: -1em;
+}
+a>img#toplogo {
+	voice-family: "\"}\""; voice-family: inherit; margin: 0;
+}
+a[href] img#toplogo {
+	margin-bottom: -1em;
+}
+div#toolbar {
+	position: relative;
+	width: 100%;
+	border: 0 solid #666;
+	border-bottom-width: 1px;
+	text-align: left;   /* Make sure everyone sees this */
+}
+html>body div#toolbar { /* For non-IE/Win */
+	text-align: right;
+}
+head:first-child+body div#toolbar {     /* Opera, IE/Win won't see */
+	text-align: left;
+}
+div#toolbar span.l1text {
+	position: absolute;
+	bottom: -2px;       /* Set position for IE/Win */
+	right: -1px;
+	background: white;
+	border: 0 solid #666;
+	border-width: 1px 0 0 5px;
+	padding-left: 0.3em;
+}
+html>body div#toolbar span.l1text {  /* For non-IE/Win */
+	position: relative;
+	right: 0;
+	bottom: -3px;
+}
+html>body div#toolbar span.l1text {
+	b\ottom: -2px;
+}
+head:first-child+body div#toolbar span.l1text {
+	position: absolute;
+	bottom: 0;
+	b\ottom: -1px;
+}
+#topbanner { margin: 0; }
+div>#topbanner { voice-family: "\"}\""; voice-family: inherit; margin-top: -1.15em; }
+div[class] #topbanner { margin-top: 0 }
+div#topbanner { background: transparent url(/home/graphics/rib0.gif) repeat; }
+div#topbanner img { display: block }
+
+div#crumbs {
+	border-top: 1px solid #ccc;
+}
+div#crumbs span.l1text {
+	float: left;
+	background: white;
+	margin-top: -1px;
+	border: 0 solid #ccc;
+	border-width: 0 5px 1px 0;
+	padding-right: 0.3em;
+}
+
+div#footer {
+	position: relative;
+}
+div#footer div#footerseal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 60px;
+	min-height: 47px;
+	border: 0 solid #666;
+	border-width: 0 5px 1px 0;
+}
+html>body div#footer div#footerseal {
+	height: 47px;
+}
+head:first-child+body div#footer div#footerseal {
+	height: auto;
+}
+div#footer div#footerseal img {
+	width: 53px;
+	height: 37px;
+	margin-left: 2px;
+	margin-top: 5px;
+	border: 0;
+}
+div#footer div#address {
+	border-top: 1px solid #666;
+	margin-left: 60px;
+	padding: 0.25em 1em 0 0.5em
+}
+div#footer div#addressright {
+	float: right;
+	padding-top: 0.25em;
+	border-top: 1px solid #666;
+}
+div#footer div[id~="addressright"] {
+	float: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+div.forceclear { width: 0; height: 0; clear: both }
+div.usebar {
+	position: relative;
+	margin-top: 1em;  
+	margin-left: 167px;
+	border-left: 2px #669 solid;
+	padding-left: 5px;
+}
+div.usebar div.usebarnav {
+	position: absolute;
+	top: 0;
+	left: -167px;
+	width: 155px;
+}
+/* need to adjust left position for ie5.0/win only.  @media all
+   filters out ie4/win, and we fix up 5.5+ next */
+@media all {
+    * html div.usebar div.usebarnav {
+	left: 10px;
+    }
+}
+/* this rule catches ie5.5+/win.  also gets gecko, ie/mac, kthml, but they
+   didn't get the 10px (* html invalid) so it doesn't matter to them */
+html * div.usebar div.usebarnav {
+	left: -167px;
+}
+div.usebar div.usebarnav p:first-child {
+	margin-top: 0;
+}

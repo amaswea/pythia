@@ -1,0 +1,105 @@
+{% load staticfiles %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Pythia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'grade_dist/css/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'grade_dist/css/custom.min.css' %}">
+    <link rel="stylesheet" href="{% static 'grade_dist/css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="{% static 'grade_dist/js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container ">
+            <div class="navbar-header ">
+                <a href="/" class="navbar-brand ">Pythia</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="# ">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" autocomplete="off" class="form-control search-box" id="classSearchBar" placeholder="Search for a class..">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+
+        <div class="well about-well">
+            <div class="row avatar-row">
+                <h3>About Pythia</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default about-panel">
+                        <div class="panel-body">
+                            Pythia is a web service for interacting with and and viewing visualizations of course grade distribution data.
+                            <br />
+                            <br />It is designed to help students make better decisions about the courses they take.
+                        </div>      
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body about-bullet-points">
+                            Pythia is different from other UW services in the following ways: 
+                            <ul class="avatar-list">
+                                <li>It enables viewing of historical grade distribution data since <strong>2000</strong></li>
+                                <li>It enables filtering of that data by <i>instructor</i>, <i>year</i>, and <i>quarter</i></li>
+                                <li>It allows filtering in unique ways including filtering by students who have taken specific prerequisites, allowing the student to find similar student data </li>
+                                <li>It finds a list of the top courses that students have taken at the same time as the course being viewed</li>
+                                <li>Using course evaluation data, it aggregates the average number of hours per week students have spent on the course in the past</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="well about-well">
+            <div class="row avatar-row">
+                <h3>Development Team</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="row avatar-row"><img class="avatar" src="{% static 'grade_dist/images/rob.jpg' %}" /></div>
+                    <div class="row avatar-row">
+                        <h4 class="avatar-name">Rob Thompson</h4></div>
+                    <div class="row avatar-row">
+                        <h6 class="avatar-title">UW Ph.D. Student in C.S</h6></div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row avatar-row"><img class="avatar" src="{% static 'grade_dist/images/isaac.jpg' %}" /></div>
+                    <div class="row avatar-row">
+                        <h4 class="avatar-name">Isaac Tian</h4></div>
+                    <div class="row avatar-row">
+                        <h6 class="avatar-title">UW Ph.D. Student in C.S.</h6></div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row avatar-row"><img class="avatar" src="{% static 'grade_dist/images/amanda.jpg' %}" /></div>
+                    <div class="row avatar-row">
+                        <h4 class="avatar-name">Amanda Swearngin</h4></div>
+                    <div class="row avatar-row">
+                        <h6 class="avatar-title">UW Ph.D. Student in C.S.</h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

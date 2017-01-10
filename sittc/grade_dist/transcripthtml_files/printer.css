@@ -1,0 +1,17 @@
+/* the following applies only to when a page is printed */
+
+@media print { 
+
+.noprint,
+.printHide
+{ 
+	display: none;
+}
+
+.printSmaller,
+.printSmaller td
+{
+	font-size: smaller;
+}
+
+} /* @media print end */

@@ -1,0 +1,12 @@
+{% load staticfiles %}
+
+{% if grades %}
+    List of Grades
+    <ul>
+    {% for g in grades %}
+        <li>{{ g.grade }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No grades available.</p>
+{% endif %}
